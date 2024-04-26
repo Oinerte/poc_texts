@@ -9,6 +9,9 @@ export class CatText {
   modules_id: number;
 
   @Prop()
+  is_prod: boolean;
+
+  @Prop()
   name: string;
 
   @Prop({ type: Object })
