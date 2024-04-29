@@ -19,7 +19,7 @@ export class AppService {
   }
 
   getCatTextById(id: string) {
-    return this.catTextModel.findById(id);
+    return this.catTextModel.findById({ _id: id });
   }
 
   getCatTexts() {
