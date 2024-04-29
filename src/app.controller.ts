@@ -28,4 +28,9 @@ export class AppController {
   ) {
     return this.appService.updateCatTextById(param.id, data);
   }
+
+  @Get('/module/:id')
+  getCatTextByModuleId(@Param() param: { id: string }) {
+    return this.appService.getCatTextById(param.id);
+  }
 }

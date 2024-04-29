@@ -29,4 +29,8 @@ export class AppService {
   updateCatTextById(id: string, data: CreateCatTextDTO) {
     return this.catTextModel.findByIdAndUpdate(id, data);
   }
+
+  getCatTextByModuleId(id: string) {
+    return this.catTextModel.find({ modules_id: id });
+  }
 }
