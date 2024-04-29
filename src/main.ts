@@ -12,6 +12,6 @@ async function bootstrap() {
     allowedHeaders: 'Content-Type, Authorization, Access-Control-Allow-Origin',
   });
 
-  await app.listen(3000);
+  await app.listen(3200);
 }
 bootstrap();
