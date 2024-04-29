@@ -23,7 +23,7 @@ export class AppController {
 
   @Patch(':id')
   updateCatTextById(
-    @Param() param: { id: string },
+    @Param() param: { id: number },
     @Body() data: CreateCatTextDTO,
   ) {
     return this.appService.updateCatTextById(param.id, data);
