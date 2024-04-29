@@ -30,7 +30,7 @@ export class AppController {
   }
 
   @Get('/module/:id')
-  getCatTextByModuleId(@Param() param: { id: string }) {
-    return this.appService.getCatTextById(param.id);
+  getCatTextByModuleId(@Param() param: { id: number }) {
+    return this.appService.getCatTextByModuleId(param.id);
   }
 }
