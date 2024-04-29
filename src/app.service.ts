@@ -19,7 +19,7 @@ export class AppService {
   }
 
   getCatTextById(id: string) {
-    return this.catTextModel.findById(id);
+    return this.catTextModel.findById({ _id: id });
   }
 
   getCatTexts() {
@@ -30,7 +30,7 @@ export class AppService {
     return this.catTextModel.findByIdAndUpdate(id, data);
   }
 
-  getCatTextByModuleId(id: string) {
+  getCatTextByModuleId(id: number) {
     return this.catTextModel.find({ modules_id: id });
   }
 }
