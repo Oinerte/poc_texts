@@ -32,9 +32,7 @@ export class AppService {
       name: data.name,
       texts: data.texts,
     };
-    const allTextModules = this.catTextModel.find({ modules_id: id });
-    allTextModules.updateMany(updatedTexts);
-    return this.catTextModel.find({ modules_id: id });
+    return this.catTextModel.updateMany({ modules_id: id }, updatedTexts);
   }
 
   getCatTextByModuleId(id: number) {
