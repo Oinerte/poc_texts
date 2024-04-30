@@ -29,6 +29,14 @@ export class AppController {
     return this.appService.updateCatTextById(param.id, data);
   }
 
+  @Patch('/dev/:id')
+  updateCatTextDevById(
+    @Param() param: { id: number },
+    @Body() data: CreateCatTextDTO,
+  ) {
+    return this.appService.updateCatTextDevById(param.id, data);
+  }
+
   @Get('/module/:id')
   getCatTextByModuleId(@Param() param: { id: number }) {
     return this.appService.getCatTextByModuleId(param.id);
