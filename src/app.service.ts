@@ -22,6 +22,14 @@ export class AppService {
     return this.catTextModel.findById({ _id: id });
   }
 
+  getProdCatTextById(id: string) {
+    return this.catTextModel.find({ modules_id: id, is_prod: true });
+  }
+
+  getDevCatTextById(id: string) {
+    return this.catTextModel.find({ modules_id: id, is_prod: false });
+  }
+
   getCatTexts() {
     return this.catTextModel.find();
   }

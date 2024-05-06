@@ -21,6 +21,16 @@ export class AppController {
     return this.appService.getCatTextById(param.id);
   }
 
+  @Get('/module/:id/prod')
+  getProdCatTextById(@Param() param: { id: string }) {
+    return this.appService.getProdCatTextById(param.id);
+  }
+
+  @Get('/module/:id/dev')
+  getDevCatTextById(@Param() param: { id: string }) {
+    return this.appService.getDevCatTextById(param.id);
+  }
+
   @Patch(':id')
   updateCatTextById(
     @Param() param: { id: string },
