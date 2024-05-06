@@ -34,8 +34,25 @@ export class AppService {
     return this.catTextModel.find();
   }
 
-  updateCatTextById(id: string, data: CreateCatTextDTO) {
-    return this.catTextModel.findByIdAndUpdate(id, data);
+  updateCatTextById(id: number, data: CreateCatTextDTO) {
+    const updatedTexts: Partial<CreateCatTextDTO> = {
+      modules_id: data.modules_id,
+      name: data.name,
+      texts: data.texts,
+    };
+    return this.catTextModel.updateMany({ modules_id: id }, updatedTexts);
+  }
+
+  updateCatTextDevById(id: number, data: CreateCatTextDTO) {
+    const updatedTexts: Partial<CreateCatTextDTO> = {
+      modules_id: data.modules_id,
+      name: data.name,
+      texts: data.texts,
+    };
+    return this.catTextModel.updateMany(
+      { modules_id: id, is_prod: false },
+      updatedTexts,
+    );
   }
 
   getCatTextByModuleId(id: number) {
